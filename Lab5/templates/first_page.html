@@ -1,0 +1,17 @@
+{% extends 'base_page.html' %}
+
+{% block title %}
+    Lab_5_RIP
+{% endblock %}
+
+{% block head %}
+    Квартиры в доме номер пять
+{% endblock %}
+
+{% block body %}
+    {% for flat in flats %}
+        <li><a href="{% url 'flat_url' flat.id %}">{{ flat.title }}</a>{% include "include_example.html" with this_flat=flat %}</li>
+    {% empty %}
+        <li>Дом не построен</li>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base_page.html' %}
+
+{% block title %}
+    Lab_5_RIP
+{% endblock %}
+
+{% block head %}
+    Квартирка
+{% endblock %}
+
+{% block body %}
+    <p>Квартира №{{ flat.id }}</p>
+    {% if flat.rooms > 4 %}
+        Комнат: 1
+    {% else %}
+        Комнат: {{ flat.rooms }}
+    {% endif %}
+{% endblock %}
